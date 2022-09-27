@@ -18,7 +18,11 @@
 							<ul id="sites">
 			{{#each trips}}
 								<li>
-									<a href=“/travel"><img src="images/{{this.image}}" alt="Img"></a>
+									<a href="/api/trips/{{this.code}}" alt="Img"></a>
+									<!-- Contrived example for quick testing purposes,
+									modification of the image anchor tag to reference the API path
+									including the trip code alllows us to click on the image and see
+									the JSON data for the specific trip -->
 									<h2><a href=“/travel">{{this.name}}</a></h2>
 									{{{this.description}}}
 								</li>
