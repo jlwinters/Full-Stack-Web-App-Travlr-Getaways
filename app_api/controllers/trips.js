@@ -26,7 +26,7 @@ const tripsList = async (req,res) => {
 };
 
 // GET: /trips/:tripCode - returns a single trip (callback method registered in the /api/trips/{tripcode} route)
-const tripsFindByCode = async (req, res) => {
+const tripsFindCode = async (req, res) => {
     Model
     // Use the mongoose .find() method with a filter set to the tripCode passed on the URL
         .find({ 'code': req.params.tripCode })
@@ -49,5 +49,5 @@ const tripsFindByCode = async (req, res) => {
 
 module.exports = {
     tripsList,
-    tripsFindByCode
+    tripsFindCode
 };
