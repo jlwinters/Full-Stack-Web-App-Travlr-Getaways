@@ -19,6 +19,7 @@ export class TripCardComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
   public isLoggedIn(): boolean {
     return this.authenticationService.isLoggedIn();
   }

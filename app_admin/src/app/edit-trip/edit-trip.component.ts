@@ -42,8 +42,7 @@ this.editForm = this.formBuilder.group({
   description: ['', Validators.required],
 })
 
-console.log('EditTripComponent#onInit calling TripDataService#getTrip(\'' +
-tripCode + '\')');
+console.log('EditTripComponent#onInit calling TripDataService#getTrip(\'' + tripCode + '\')');
 
 this.tripService.getTrip(tripCode)
     .then(data => {
@@ -55,7 +54,6 @@ this.tripService.getTrip(tripCode)
 
 onSubmit() {
   this.submitted = true;
-
   if (this.editForm.valid) {
     this.tripService.updateTrip(this.editForm.value)
       .then(data => {
@@ -64,4 +62,5 @@ onSubmit() {
       });
     }
   }
+  get f() { return this.editForm.controls; }
 }

@@ -23,14 +23,6 @@ export class TripListingComponent implements OnInit {
     private router: Router,
     private authenticationService: AuthenticationService
     ) { }
-  public isLoggedIn(): boolean {
-    return this.authenticationService.isLoggedIn();
-  }
-  
-  private addTrip(): void {
-    console.log('Inside TripListingComponent#addTrip');
-    this.router.navigate(['add-trip']);
-  }
 
   private getTrips(): void {
     console.log('Inside TripListingComponent#getTrips');
@@ -42,8 +34,17 @@ export class TripListingComponent implements OnInit {
           this.trips = foundTrips;
         });
   }
+  
+  private addTrip(): void {
+    console.log('Inside TripListingComponent#addTrip');
+    this.router.navigate(['add-trip']);
+  }
 
   ngOnInit(): void {
     this.getTrips();
+  }
+
+  public isLoggedIn(): boolean {
+    return this.authenticationService.isLoggedIn();
   }
 }

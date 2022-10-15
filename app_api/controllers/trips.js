@@ -2,7 +2,7 @@
 //const { model } = require('mongoose');
 const mongoose = require('mongoose'); //.set('debug', true);
 const Trip = mongoose.model('trips');
-const User = mongoose.model('users');
+const User = mongoose.model('user');
 
 // GET: /trips  - lists all the trips (callback method registered in the /api/trips/ route)
 const tripsList = async (req,res) => {
